@@ -18,19 +18,6 @@ namespace ContactsManager.Formatters
             SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/csv"));
         }
 
-        public CsvMediaTypeFormatter(MediaTypeMapping mediaTypeMapping)
-            : this()
-        {
-            MediaTypeMappings.Add(mediaTypeMapping);
-        }
-
-        public CsvMediaTypeFormatter(IEnumerable<MediaTypeMapping> mediaTypeMappings)
-            : this()
-        {
-            foreach (var mediaTypeMapping in mediaTypeMappings)
-                MediaTypeMappings.Add(mediaTypeMapping);
-        }
-
         public override bool CanReadType(Type type)
         {
             return false;
