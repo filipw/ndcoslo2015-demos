@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Net.Http.Headers;
+using System.Reflection;
 
 namespace ContactManager.Formatters
 {
@@ -79,7 +80,7 @@ namespace ContactManager.Formatters
                     stringWriter.WriteLine(valueLine.TrimEnd(','));
                 }
 
-                var writer = new StreamWriter(context.HttpContext.Response.Body);
+                var writer = new StreamWriter(context.ActionContext.HttpContext.Response.Body);
                 await writer.WriteAsync(stringWriter.ToString());
                 await writer.FlushAsync();
             }

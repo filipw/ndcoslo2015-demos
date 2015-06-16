@@ -27,20 +27,4 @@ namespace ContactManager
             return false;
         }
     }
-
-    //public static class HttpContextExtensions
-    //{
-    //    public static bool IsLocal(this HttpContext context)
-    //    {
-    //        context.
-    //        if (request.Properties.ContainsKey(OwinContext))
-    //        {
-    //            dynamic ctx = request.Properties[OwinContext];
-    //            if (ctx != null)
-    //            {
-    //                return ctx.Request.RemoteIpAddress;
-    //            }
-    //        }
-    //    }
-    //}
 }

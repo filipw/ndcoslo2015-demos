@@ -14,7 +14,6 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.WebApiCompatShim;
 using Microsoft.AspNet.Routing;
 using Microsoft.Framework.DependencyInjection;
-using Microsoft.Framework.DependencyInjection.Abstractions;
 using Microsoft.Framework.WebEncoders;
 using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json;
@@ -68,7 +67,8 @@ namespace ContactManager
                         ErrorId = Guid.NewGuid()
                     };
 
-                    if (context.Connection.IsLocal)
+                    var connection = context.GetFeature<IHttpConnectionFeature>();
+                    if (connection.IsLocal)
                     {
                         if (errorFeature.Error != null)
                         {
