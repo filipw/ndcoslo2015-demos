@@ -1,36 +1,41 @@
 ﻿{
-    "webroot": "wwwroot",
-    "version": "1.0.0-*",
+  "webroot": "wwwroot",
+  "version": "1.0.0-*",
 
-    "dependencies": {
-        "Microsoft.AspNet.Mvc": "6.0.0-*",
-        "Microsoft.AspNet.Server.IIS": "1.0.0-*",
-        "Microsoft.AspNet.Server.WebListener": "1.0.0-*",
-        "Microsoft.AspNet.Diagnostics":  "1.0.0-*",
-        "Microsoft.AspNet.StaticFiles": "1.0.0-*",
-        "Microsoft.AspNet.Mvc.Xml": "6.0.0-*",
-        "Microsoft.AspNet.Mvc.WebApiCompatShim": "6.0.0-*",
-        "Microsoft.Framework.DependencyInjection": "1.0.0-*"
-    },
+  "dependencies": {
+    "Microsoft.AspNet.Mvc": "6.0.0-*",
+    "Microsoft.AspNet.Server.IIS": "1.0.0-*",
+    "Microsoft.AspNet.Server.WebListener": "1.0.0-*",
+    "Microsoft.AspNet.Diagnostics": "1.0.0-*",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-*",
+    "Microsoft.AspNet.Mvc.Xml": "6.0.0-*",
+    "Microsoft.AspNet.Mvc.WebApiCompatShim": "6.0.0-*",
+    "Microsoft.Framework.DependencyInjection": "1.0.0-*"
+  },
 
-    "commands": {
-        "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000"
-    },
+  "commands": {
+    "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000"
+  },
 
-    "frameworks": {
-        "dnx451": { }
-    },
+  "frameworks": {
+    "dnx451": { },
+    "dnxcore50": {
+      "dependencies": {
+        "System.Reflection.TypeExtensions": "4.0.0-beta-22816"
+      }
+    }
+  },
 
-    "exclude": [
-        "wwwroot",
-        "node_modules",
-        "bower_components"
-    ],
-    "publishExclude": [
-        "node_modules",
-        "bower_components",
-        "**.xproj",
-        "**.user",
-        "**.vspscc"
-    ]
+  "exclude": [
+    "wwwroot",
+    "node_modules",
+    "bower_components"
+  ],
+  "publishExclude": [
+    "node_modules",
+    "bower_components",
+    "**.xproj",
+    "**.user",
+    "**.vspscc"
+  ]
 }

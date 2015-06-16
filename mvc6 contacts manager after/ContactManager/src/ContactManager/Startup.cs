@@ -10,6 +10,7 @@ using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Diagnostics;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
+using Microsoft.AspNet.Http.Features;
 using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.WebApiCompatShim;
 using Microsoft.AspNet.Routing;
@@ -44,6 +45,9 @@ namespace ContactManager
                 options.RespectBrowserAcceptHeader = true;
 
                 options.FormatterMappings.SetMediaTypeMappingForFormat("json", MediaTypeHeaderValue.Parse("application/json"));
+            }).Configure<WebApiCompatShimOptions>(opt =>
+            {
+                opt.Formatters = new MediaTypeFormatterCollection();
             });
 
             // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
