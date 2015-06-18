@@ -24,8 +24,7 @@ namespace ContactsManager.Filters
             if (response.TryGetContentValue(out contacts))
             {
                 var objectContent = (ObjectContent<IEnumerable<Contact>>)actionExecutedContext.Response.Content;
-                objectContent.Value = contacts.Select(c => AddSelfLink(c, actionExecutedContext)).AsQueryable();
-                return;
+                objectContent.Value = contacts.Select(c => AddSelfLink(c, actionExecutedContext)).ToList();
             }
         }
 
