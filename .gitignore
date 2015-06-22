@@ -117,3 +117,6 @@ artifacts
 /*.DS_Store
 /mvc6 contacts manager before/.DS_Store
 /slides/*.DS_Store
+/mvc6 contacts manager after/ContactManager/.vs
+/mvc6 contacts manager before/ContactManager/.vs/config/applicationhost.config
+/web api contacts manager/ContactsManager/.vs/config/applicationhost.config

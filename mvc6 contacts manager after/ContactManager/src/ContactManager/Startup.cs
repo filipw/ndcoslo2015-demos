@@ -10,7 +10,6 @@ using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Diagnostics;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Http.Features;
 using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.WebApiCompatShim;
 using Microsoft.AspNet.Routing;
@@ -18,6 +17,7 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.WebEncoders;
 using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json;
+using Microsoft.AspNet.Http.Features;
 
 namespace ContactManager
 {
@@ -44,7 +44,6 @@ namespace ContactManager
                 options.AddXmlDataContractSerializerFormatter();
                 options.RespectBrowserAcceptHeader = true;
 
-                options.FormatterMappings.SetMediaTypeMappingForFormat("json", MediaTypeHeaderValue.Parse("application/json"));
             }).Configure<WebApiCompatShimOptions>(opt =>
             {
                 opt.Formatters = new MediaTypeFormatterCollection();
