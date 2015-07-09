@@ -1,4 +1,4 @@
-# ndcoslo2015-demos
+# NDC Oslo, June 2015
 
 Demo of migrating Web API to MVC6 from NDC Oslo 2015
 
