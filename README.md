@@ -26,6 +26,7 @@ To run the project make sure you install that DNX version:
 
  - `dnvm install 1.0.0-beta6-12189 -u`
  - `dnvm install 1.0.0-beta6-12189 -u -runtime coreclr`
+ - `dnvm alias default 1.0.0-beta-12189` - (to pick up the DNX in Visual Studio)
 
 Alternatively go to `global.json` in the MVC 6 projects and update the DNX version there
 
